@@ -1,0 +1,29 @@
+header {
+    background: turquoise;
+    text-align: center;
+}
+body {
+    background: linear-gradient(35deg,#CCFFFF, #FFCCCC);
+    margin: auto;
+    padding: 10px;
+}
+#img-div {
+    display: flex;
+    justify-content: center;
+}
+#image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+#img-caption {
+    font-style: italic;
+    text-align: center;
+}
+#tribute-info {
+    display: flex;
+    justify-content: center;
+}
+#center {
+    text-align: center;
+}
