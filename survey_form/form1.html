@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/survey_form/style1.css">
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Survey Form</h1>
+    </header>
+    <main>
+        <form id="survey-form">
+            <p id="description">Let us know how we can improve "The Rock Signal"</p>
+
+            <div id="information">
+                <label for="name" class="label">*Name: </label>
+                <input type="text" required id="name" placeholder="Enter your name" class="input">
+                <br>
+                <label for="email" class="label">*Email: </label>
+                <input type="email" required id="email" placeholder="Enter your Email" class="input">
+                <br>
+                <label for="number" class="label">*Age: </label>
+                <input type="number" id="number" placeholder="Age" class="input">
+                <br>
+            </div>
+
+            <div id="currentRole">
+                <label class="label">Which option best describes your current role?
+                    <select>
+                        <option disabled value>Select an option</option>
+                        <option value="student">Student</option>
+                        <option value="job">Full Time Job</option>
+                        <option value="learner">Full Time Learner</option>
+                        <option value="preferNo">Prefer not to say</option>
+                        <option value="other">Other</option>
+                    </select>
+            </div>
+
+            <div id="recommend">
+                <label for="refer" class="label">How likely is that you would recommend "The ROCK Signal to a
+                    friend?"</label><br>
+                <input type="radio" id="refer" name="radio-select">Definitely<br>
+                <input type="radio" id="refer" name="radio-select">Maybe<br>
+                <input type="radio" id="refer" name="radio-select" checked>Not sure
+            </div>
+
+            <div id="likeMost">
+                <label for="likely" class="label">What do you like most for The Rock Signal:</label>
+                <select name="role" id="likely">
+                    <option value="" disabled>Select an option</option>
+                    <option value="profit">High Profit</option>
+                    <option value="drawdown">Low Draw Down</option>
+                    <option value="safe">Very Safe</option>
+                    <option value="helpful">Helpful</option>
+                    <option value="other">Others</option>
+                </select>
+
+            </div>
+
+            <div id="futureImprove">
+                <label for="feedback" class="label">Things that should be improved in the future(Check All that
+                    Apply):</label><br>
+                <input type="checkbox" name="feedback-select" id="feedback" value="profit">Monthly Profit<br>
+                <input type="checkbox" name="feedback-select" id="feedback" value="risk">Decrease Risk<br>
+                <input type="checkbox" name="feedback-select" id="feedback" value="aggressive">More Aggressive
+                Trading<br>
+                <input type="checkbox" name="feedback-select" id="feedback" value="treding">More Trend Following<br>
+                <input type="checkbox" name="feedback-select" id="feedback" value="scalping">More Scalping<br>
+                <input type="checkbox" name="feedback-select" id="feedback" value="withdrawn">Withdrawn Weekly<br>
+            </div>
+
+            <div id="additionComment">
+                <label for="comment">Any Comments or Suggestions:</label><br>
+                <textarea name="message" id="comment" placeholder="Enter your comment here..." rows="3"
+                    cols="30"></textarea><br>
+                <input type="submit" id="submit">
+            </div>
+
+        </form>
+    </main>
+</body>
+
+</html>
