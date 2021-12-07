@@ -1,0 +1,20 @@
+const MyComponent = function() {
+    return (
+        <div>
+            <h1>Stateless Functional Component</h1>
+            <p>Everything in React is component. First way to create Stateless Functional Component is to write a JavaScript
+            function that returns either JSX or null.</p>
+        </div>
+    );
+}
+
+class MyComponent extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        <div> <h1>Hello React!</h1> </div>
+      );
+    }
+  };
