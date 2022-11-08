@@ -18,19 +18,49 @@
 
 ------------------------
 what element i should target?
+What hook i should use? class, element, div
 where the content live?
 Is it change the overall width of the container which affect the layout of the page?
+what properties to use?
+what value should I use?
 
 */
+html {
+  background-color: aquamarine;
+}
 
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 87%;
+}
+
+/* 
+-adjust the spacing in the header, h1, p: using margin, padding
+-styling header, h1, p: color, font weight, font size.
+ */
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: cadetblue;
+}
+header h1 {
+  margin: 0;
+  font-weight: normal;
+}
+header p {
+  margin: 0;
+}
 /* //container class
 //add maximum width for human eye
 //auto center in the browser window */
-
 .container {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 
 /* //content-area class
@@ -48,12 +78,26 @@ Is it change the overall width of the container which affect the layout of the p
 .main-area {
   width: 66%;
   float: left;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 /* //sidebar class
 //width and float properties for column layout */
 .sidebar {
   width: 34%;
   float: left;
+  background-color: bisque;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-size: 85%;
+}
+
+footer {
+  text-align: center;
+  font-size: 75%;
+  color: gray;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .group:before,
