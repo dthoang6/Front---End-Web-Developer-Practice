@@ -1,0 +1,71 @@
+/* From the figma UX Design to:
+
+-assign a different background color to the overall page 
+-give the container for our website content a background of white
+-add padding on the left and right so that the content doest sit right up against the edge
+
+-add a bit of space between the main column and the side bar.
+-change the font for overall page by target body element (CSS Typography)
+
+-adjust the spacing in the header, h1, p: using margin, padding
+-styling header, h1, p: color, font weight, font size.
+
+-styling side bar area by: background color, padding so does not sit against the edge,
+-smaller font size than the column
+
+-style footer: center text, make it smaller, color, add extra space to top and bottom
+
+
+------------------------
+what element i should target?
+where the content live?
+Is it change the overall width of the container which affect the layout of the page?
+
+*/
+
+/* //container class
+//add maximum width for human eye
+//auto center in the browser window */
+
+.container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* //content-area class
+//move main-area and aside
+//have border top and border bottom
+//position main-area and aside to sit side by side */
+.content-area {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+/* //main-area class
+//width and float properties for column layout
+//want two distinct column by using clear fix */
+.main-area {
+  width: 66%;
+  float: left;
+}
+/* //sidebar class
+//width and float properties for column layout */
+.sidebar {
+  width: 34%;
+  float: left;
+}
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  zoom: 1;
+}
