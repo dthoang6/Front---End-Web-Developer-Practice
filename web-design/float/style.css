@@ -1,5 +1,5 @@
 /* From the figma UX Design to:
-
+step1: build layout, style layout
 -assign a different background color to the overall page 
 -give the container for our website content a background of white
 -add padding on the left and right so that the content doest sit right up against the edge
@@ -14,7 +14,18 @@
 -smaller font size than the column
 
 -style footer: center text, make it smaller, color, add extra space to top and bottom
+----------
+step2: build menu bar, style it
+-build html5 menu bar
+-remove the bullets from each list item
+-get the link sit side by side one another all on one horizontal line instead of stacking one per line
+-if i see there is default style, remove it or not? padding 0, margin 0
 
+-add bit of space between the slogan and our navigation 
+-give each of anchor item a subtle border so they look like a button to encourage to tap a click
+-link sit directly on the border line between the header and the body content.
+
+-add a hover effect so that when the user hovers over a particular link it change it styles
 
 ------------------------
 what element i should target?
@@ -26,12 +37,32 @@ what value should I use?
 
 */
 html {
-  background-color: aquamarine;
+  background-color: #fcfdf2;
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Tahoma", Courier, monospace;
   font-size: 87%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Banner Overlay */
+.banner-description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px 25px;
+}
+.image-banner {
+  position: relative;
+}
+.image-banner img {
+  display: block;
 }
 
 /* 
@@ -40,7 +71,6 @@ body {
  */
 header {
   padding-top: 20px;
-  padding-bottom: 20px;
   color: cadetblue;
 }
 header h1 {
@@ -50,9 +80,53 @@ header h1 {
 header p {
   margin: 0;
 }
-/* //container class
-//add maximum width for human eye
-//auto center in the browser window */
+/* nav-bar site navigation begin */
+.nav-bar {
+  margin-top: 20px;
+}
+.nav-bar ul {
+  margin: 0;
+  padding: 0;
+}
+.nav-bar li {
+  list-style-type: none;
+  float: left;
+  margin-right: 5px;
+}
+.nav-bar a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 3px solid #ffe9b1;
+  border-bottom: none;
+  /*by default link element or a element are in line elements instead of block element*/
+  /* display inline to display block */
+}
+/* add hover effect with pseudo selector */
+.nav-bar a:hover {
+  background-color: #ffe9b1;
+}
+/* Sub menu dropdow */
+.nav-bar li ul {
+  position: absolute;
+  left: -9999px;
+  background-color: #ffe9b1;
+  box-shadow: 7px 7px 7px -7px rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+.nav-bar li:hover ul {
+  left: auto;
+}
+.nav-bar li li {
+  float: none;
+  margin-right: 0;
+}
+.nav-bar li li a:hover {
+  background-color: #ffe9b1;
+  color: #fff;
+}
+/* nav-bar site navigation end */
+/*container class*/
 .container {
   max-width: 940px;
   margin-left: auto;
@@ -63,10 +137,7 @@ header p {
   box-sizing: border-box;
 }
 
-/* //content-area class
-//move main-area and aside
-//have border top and border bottom
-//position main-area and aside to sit side by side */
+/* //content-area class*/
 .content-area {
   border-top: 3px solid black;
   border-bottom: 3px solid black;
@@ -81,7 +152,116 @@ header p {
   padding-right: 40px;
   box-sizing: border-box;
 }
-/* //sidebar class
+/* Table Styles Begin */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.col-item-name {
+  width: 60%;
+}
+.col-quantity,
+.col-price {
+  width: 20%;
+}
+table th {
+  text-align: left;
+  background-color: #869960;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+table th,
+table td {
+  border: 1px solid #869960;
+  padding: 10px;
+  vertical-align: top;
+}
+
+table tbody tr:nth-child(odd) td {
+  background-color: #e5e9dc;
+}
+/* use advance selectors to align text center for quantity and price */
+table.grocery-list tr :nth-child(2),
+table.grocery-list tr :nth-child(3) {
+  text-align: center;
+}
+/* Table Styles End */
+
+/* Form Style */
+form {
+  background-color: #ececec;
+  padding: 30px 40px;
+  margin-bottom: 40px;
+}
+
+.hidden-label {
+  position: absolute;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+input,
+select {
+  font-family: "Tahoma", Courier, monospace;
+  font-size: 100%;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 40px;
+  margin-bottom: 15px;
+  border: 1px solid #cdcdcd;
+}
+/* give users visual feedback letting know which field they are working with
+-green border around the field
+-inline shadow
+*/
+/* input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus {
+  border: 1px solid #869960;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.13);
+} */
+
+input[type="submit"] {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  background-color: #869960;
+  color: #fff;
+  padding: 10px 0;
+  border: 1px solid #798a56;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  border: 1px solid #535e3b;
+  background-color: #798a56;
+}
+.checkbox-text {
+  font-size: 85%;
+  color: #777;
+}
+/* Form Style End */
+
+/*sidebar
 //width and float properties for column layout */
 .sidebar {
   width: 34%;
