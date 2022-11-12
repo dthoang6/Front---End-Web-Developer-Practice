@@ -1,40 +1,10 @@
 /* From the figma UX Design to:
-step1: build layout, style layout
--assign a different background color to the overall page 
--give the container for our website content a background of white
--add padding on the left and right so that the content doest sit right up against the edge
-
--add a bit of space between the main column and the side bar.
--change the font for overall page by target body element (CSS Typography)
-
--adjust the spacing in the header, h1, p: using margin, padding
--styling header, h1, p: color, font weight, font size.
-
--styling side bar area by: background color, padding so does not sit against the edge,
--smaller font size than the column
-
--style footer: center text, make it smaller, color, add extra space to top and bottom
-----------
-step2: build menu bar, style it
--build html5 menu bar
--remove the bullets from each list item
--get the link sit side by side one another all on one horizontal line instead of stacking one per line
--if i see there is default style, remove it or not? padding 0, margin 0
-
--add bit of space between the slogan and our navigation 
--give each of anchor item a subtle border so they look like a button to encourage to tap a click
--link sit directly on the border line between the header and the body content.
-
--add a hover effect so that when the user hovers over a particular link it change it styles
-
-------------------------
 what element i should target?
 What hook i should use? class, element, div
 where the content live?
 Is it change the overall width of the container which affect the layout of the page?
 what properties to use?
 what value should I use?
-
 */
 html {
   background-color: #fcfdf2;
@@ -71,7 +41,10 @@ img {
  */
 header {
   padding-top: 20px;
-  color: cadetblue;
+  color: #535e3b;
+  background-image: url(./images/flower.jpg);
+  background-position: right center;
+  background-repeat: no-repeat;
 }
 header h1 {
   margin: 0;
@@ -131,9 +104,9 @@ header p {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  background: url(./images/color-tile.png) left bottom repeat-x, #fff url(./images/color-tile.png) left top repeat-x;
   padding-left: 40px;
-  padding-right: 40px;
+  padding-top: 15px;
   box-sizing: border-box;
 }
 
@@ -152,6 +125,66 @@ header p {
   padding-right: 40px;
   box-sizing: border-box;
 }
+/* UI menu using CSS Sprite to turn text based menu to ui */
+.ui-menu ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.ui-menu li {
+  float: left;
+  list-style: none;
+  margin-right: 20px;
+}
+/* universal link rule */
+.ui-menu a {
+  display: block;
+  text-decoration: none;
+  /* width and height of icon */
+  width: 50px;
+  height: 50px;
+  /* issue: background ui will be repeat the home ui */
+  background-image: url(./images/sprites.png);
+  background-repeat: no-repeat;
+  /* hide the menu text */
+  text-indent: -9999px;
+}
+.ui-home a:hover {
+  background-position: -50px 0;
+}
+.ui-profile a {
+  /* 0 is horizontal -50 is vertical */
+  background-position: 0 -50px;
+}
+.ui-profile a:hover {
+  background-position: -50px -50px;
+}
+.ui-setting a {
+  background-position: 0 -100px;
+}
+.ui-setting a:hover {
+  background-position: -50px -100px;
+}
+/* UI Menu End */
+
+/* Bird Style with CSS background */
+.birds {
+  /* background image */
+  background: #c2bbb1 url(./images/bird.jpg) center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 0;
+}
+.birds p {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+  display: inline-block;
+  padding: 10px;
+}
+/* Bird Background End */
 /* Table Styles Begin */
 table {
   border-spacing: 0;
@@ -266,7 +299,14 @@ input[type="submit"]:focus {
 .sidebar {
   width: 34%;
   float: left;
-  background-color: bisque;
+  /* fallback code for older browser */
+  background-color: #e5e9dc;
+  /* gradient background for most of different browser */
+  background-image: -webkit-linear-gradient(top, #e5e9dc, #fff);
+  background-image: -moz-linear-gradient(top, #e5e9dc, #fff);
+  background-image: -ms-linear-gradient(top, #e5e9dc, #fff);
+  background-image: -o-linear-gradient(top, #e5e9dc, #fff);
+  background-image: linear-gradient(to bottom, #e5e9dc, #fff);
   padding: 40px 20px;
   box-sizing: border-box;
   font-size: 85%;
